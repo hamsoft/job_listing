@@ -12,7 +12,7 @@ class CompanyUpdateRequest extends Request implements CompanyData
 {
 
     public function getDescription(): string {
-        return $this->get('description');
+        return $this->get('description')?? '';
     }
 
 }

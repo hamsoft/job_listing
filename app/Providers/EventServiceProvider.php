@@ -4,6 +4,8 @@ namespace JobListing\Providers;
 
 use Illuminate\Support\Facades\Event;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
+use JobListing\Services\CandidateManager\CandidateAccepted;
+use JobListing\Services\JobPositionManager\CandidateAcceptedListener;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -13,8 +15,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'JobListing\Events\Event' => [
-            'JobListing\Listeners\EventListener',
+        CandidateAccepted::class => [
+            CandidateAcceptedListener::class
         ],
     ];
 

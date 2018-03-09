@@ -22,7 +22,7 @@
                             <label for="InputDeadline">@lang('Deadline')</label>
                             <input type="datetime-local" class="form-control" placeholder="Enter Name"
                                    id="InputDeadline" name="deadline"
-                                   value="{{old('deadline')}}">
+                                   value="{{old('deadline')}}" required>
                             @if($errors->has('deadline'))
                                 <small class="form-text text-danger">{{$errors->get('deadline')[0]}}</small>
                             @endif

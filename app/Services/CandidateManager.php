@@ -35,8 +35,9 @@ class CandidateManager
             \DB::beginTransaction();
 
             $candidate = $this->createCandidate($position, $data);
-            $this->saveCV($position, $data, $candidate);
-
+            if($position->getCompany()->hasGDrive()){
+                $this->saveCV($position, $data, $candidate);
+            }
             \DB::commit();
         } catch (\Exception $e) {
             \DB::rollBack();

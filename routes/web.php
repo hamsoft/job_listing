@@ -30,7 +30,6 @@ Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('/register', 'Auth\RegisterController@getRegisterPage')->name('register');
 Route::post('/register', 'Auth\RegisterController@register')->name('register');
 
-
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/manage/company', 'Manage\CompanyController@showCompany')->name('manage.company');
